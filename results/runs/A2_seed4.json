@@ -1,0 +1,93 @@
+{
+ "arm": "A2",
+ "description": "dot-product, no PE (LLaMA block)",
+ "seed": 4,
+ "model": "graphllama",
+ "model_kwargs": {
+  "dim": 64,
+  "num_layers": 2,
+  "num_heads": 8,
+  "dropout": 0.6,
+  "input_dropout": 0.6,
+  "attn_dropout": 0.3,
+  "norm": "rms",
+  "ffn": "swiglu",
+  "ffn_mult": 2.0,
+  "lap_k": 16,
+  "rwse_dim": 16,
+  "self_loops": "add"
+ },
+ "train_cfg": {
+  "lr": 0.005,
+  "weight_decay": 0.0005,
+  "epochs": 300,
+  "patience": 100,
+  "grad_clip": 1.0,
+  "scheduler": "none"
+ },
+ "wall_seconds": 21.90994644165039,
+ "phase_diagnostics": null,
+ "data_meta": {
+  "dataset": "Cora (Planetoid, public split)",
+  "num_nodes": 2708,
+  "num_edges_directed": 10556,
+  "num_features": 1433,
+  "num_classes": 7,
+  "train/val/test": [
+   140,
+   500,
+   1000
+  ],
+  "raw_sha256_16": "90e586ac50c21748",
+  "structural": {
+   "num_components": 78,
+   "lap_selected_multiplicities": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "lap_min_gap_selected": 0.000217168360145039,
+   "null_space_dim": 78,
+   "lap_seconds": 2.821879240000044,
+   "rwse_seconds": 2.920518541999968
+  }
+ },
+ "env": {
+  "torch": "2.14.1+cu130",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+  "threads": 1,
+  "cuda": false,
+  "git_commit": null
+ },
+ "finished": true,
+ "best_epoch": 18,
+ "epochs_run": 119,
+ "train_seconds": 21.884298284000124,
+ "seconds_per_epoch": 0.1839016662521019,
+ "num_parameters": 174471,
+ "inference_seconds": 0.02275378800004546,
+ "train_loss": 0.0303132776170969,
+ "train_acc": 1.0,
+ "train_macro_f1": 1.0,
+ "val_loss": 0.7431838512420654,
+ "val_acc": 0.8019999861717224,
+ "val_macro_f1": 0.7852968125986127,
+ "test_loss": 0.6948996782302856,
+ "test_acc": 0.8090000152587891,
+ "test_macro_f1": 0.7985238642206258,
+ "cpu_max_rss_mb": 787.13671875
+}

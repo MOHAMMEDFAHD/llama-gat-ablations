@@ -1,0 +1,5 @@
+# Graph rotary variants (see src/graph/graph_rope.py)
+index:    {rotary: index}                 # INVALID control: 1D RoPE on arbitrary node ids
+spectral: {rotary: spectral, lap_k: 16}   # WIRE-style, learnable nu
+rwse:     {rotary: rwse, rwse_dim: 16}    # learned MLP(RWSE) -> phases
+edge:     {rotary: edge}                  # one-hop antisymmetric edge phases (AW-RoPE-inspired, L=1)

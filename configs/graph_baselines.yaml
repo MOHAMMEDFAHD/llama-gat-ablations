@@ -1,0 +1,8 @@
+# Baseline hyper-parameters (literature defaults for Cora; not tuned on test).
+gat:    {hidden: 8, heads: 8, dropout: 0.6}           # Velickovic et al. 2018
+gatv2:  {hidden: 8, heads: 8, dropout: 0.6}
+gcn:    {hidden: 64, dropout: 0.5}                    # Kipf & Welling 2017 used 16 hidden
+sage:   {hidden: 64, dropout: 0.5}
+gin:    {hidden: 64, dropout: 0.5}
+gt_lappe: {dim: 64, heads: 4, layers: 2, lap_k: 16, dropout: 0.5}
+gps:    {dim: 64, heads: 4, layers: 2, rwse_dim: 16, dropout: 0.5}

@@ -1,0 +1,102 @@
+/usr/local/lib/python3.12/dist-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/claude/llama-graph-attention/src/training/graph_trainer.py:83: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  state["history"].append({"epoch": state["epoch"], "train_loss": float(loss), "val_acc": ev["val_acc"], "val_loss": ev["val_loss"]})
+A0 seed=0 val=0.810 test=0.822 s=14
+A0 seed=1 val=0.804 test=0.827 s=12
+A0 seed=2 val=0.808 test=0.817 s=24
+A0 seed=3 val=0.812 test=0.823 s=31
+A0 seed=4 val=0.824 test=0.836 s=21
+A1 seed=0 val=0.820 test=0.819 s=32
+A1 seed=1 val=0.822 test=0.832 s=39
+A1 seed=2 val=0.814 test=0.819 s=31
+A1 seed=3 val=0.812 test=0.819 s=33
+A1 seed=4 val=0.814 test=0.804 s=31
+A2 seed=0 val=0.778 test=0.797 s=21
+A2 seed=1 val=0.776 test=0.767 s=25
+A2 seed=2 val=0.758 test=0.765 s=21
+A2 seed=3 val=0.784 test=0.794 s=22
+A2 seed=4 val=0.802 test=0.809 s=22
+A3 seed=0 val=0.798 test=0.809 s=26
+A3 seed=1 val=0.776 test=0.785 s=24
+/usr/local/lib/python3.12/dist-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/claude/llama-graph-attention/src/training/graph_trainer.py:83: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  state["history"].append({"epoch": state["epoch"], "train_loss": float(loss), "val_acc": ev["val_acc"], "val_loss": ev["val_loss"]})
+A3 seed=2 val=0.780 test=0.778 s=47
+A3 seed=3 val=0.784 test=0.793 s=23
+A3 seed=4 val=0.802 test=0.792 s=24
+A4 seed=0 val=0.752 test=0.727 s=55
+A4 seed=1 val=0.736 test=0.720 s=50
+A4 seed=2 val=0.750 test=0.766 s=50
+A4 seed=3 val=0.750 test=0.760 s=38
+A4 seed=4 val=0.756 test=0.744 s=52
+A5 seed=0 val=0.784 test=0.782 s=24
+A5 seed=1 val=0.780 test=0.788 s=23
+A5 seed=2 val=0.792 test=0.787 s=24
+A5 seed=3 val=0.770 test=0.777 s=23
+A5 seed=4 val=0.778 test=0.774 s=23
+A6 seed=0 val=0.782 test=0.785 s=25
+A6 seed=1 val=0.782 test=0.789 s=24
+A6 seed=2 val=0.792 test=0.785 s=25
+A6 seed=3 val=0.778 test=0.757 s=44
+A6 seed=4 val=0.776 test=0.773 s=23
+A7 seed=0 val=0.790 test=0.771 s=22
+A7 seed=1 val=0.788 test=0.785 s=22
+A7 seed=2 val=0.780 test=0.769 s=33
+A7 seed=3 val=0.786 test=0.790 s=22
+A7 seed=4 val=0.770 test=0.751 s=34
+A8 seed=0 val=0.786 test=0.792 s=26
+A8 seed=1 val=0.782 test=0.816 s=23
+A8 seed=2 val=0.784 test=0.779 s=23
+A8 seed=3 val=0.782 test=0.774 s=24
+A8 seed=4 val=0.784 test=0.787 s=42
+A9 seed=0 val=0.782 test=0.788 s=21
+A9 seed=1 val=0.778 test=0.763 s=23
+A9 seed=2 val=0.766 test=0.756 s=22
+A9 seed=3 val=0.794 test=0.765 s=50
+A9 seed=4 val=0.778 test=0.766 s=24
+A10 seed=0 val=0.786 test=0.792 s=25
+A10 seed=1 val=0.780 test=0.785 s=26
+A10 seed=2 val=0.776 test=0.786 s=25
+A10 seed=3 val=0.764 test=0.778 s=25
+A10 seed=4 val=0.770 test=0.759 s=25
+A10e seed=0 val=0.778 test=0.776 s=33
+A10e seed=1 val=0.796 test=0.798 s=32
+A10e seed=2 val=0.780 test=0.778 s=35
+A10e seed=3 val=0.784 test=0.799 s=34
+A10e seed=4 val=0.782 test=0.791 s=33
+B_gcn seed=0 val=0.806 test=0.822 s=19
+B_gcn seed=1 val=0.794 test=0.812 s=26
+B_gcn seed=2 val=0.802 test=0.820 s=18
+B_gcn seed=3 val=0.808 test=0.820 s=21
+B_gcn seed=4 val=0.798 test=0.813 s=17
+B_sage seed=0 val=0.798 test=0.781 s=45
+B_sage seed=1 val=0.782 test=0.784 s=41
+B_sage seed=2 val=0.796 test=0.783 s=43
+B_sage seed=3 val=0.788 test=0.788 s=30
+B_sage seed=4 val=0.788 test=0.785 s=49
+B_gin seed=0 val=0.768 test=0.786 s=22
+B_gin seed=1 val=0.778 test=0.782 s=22
+B_gin seed=2 val=0.770 test=0.750 s=29
+B_gin seed=3 val=0.766 test=0.758 s=23
+B_gin seed=4 val=0.782 test=0.777 s=24
+C_layernorm seed=0 val=0.778 test=0.779 s=34
+C_layernorm seed=1 val=0.782 test=0.765 s=28
+C_layernorm seed=2 val=0.774 test=0.757 s=50
+C_gelu seed=0 val=0.766 test=0.752 s=27
+C_gelu seed=1 val=0.788 test=0.801 s=22
+C_gelu seed=2 val=0.784 test=0.762 s=19
+C_mqa seed=0 val=0.770 test=0.734 s=47
+C_mqa seed=1 val=0.754 test=0.739 s=26
+C_mqa seed=2 val=0.762 test=0.773 s=20
+C_3layers seed=0 val=0.784 test=0.791 s=31
+/usr/local/lib/python3.12/dist-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/claude/llama-graph-attention/src/training/graph_trainer.py:83: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  state["history"].append({"epoch": state["epoch"], "train_loss": float(loss), "val_acc": ev["val_acc"], "val_loss": ev["val_loss"]})
+C_3layers seed=1 val=0.774 test=0.755 s=50
+C_3layers seed=2 val=0.782 test=0.775 s=26

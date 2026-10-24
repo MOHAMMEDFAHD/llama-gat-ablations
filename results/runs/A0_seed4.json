@@ -1,0 +1,84 @@
+{
+ "arm": "A0",
+ "description": "GAT (manual, additive)",
+ "seed": 4,
+ "model": "gat",
+ "model_kwargs": {
+  "hidden": 8,
+  "heads": 8,
+  "dropout": 0.6
+ },
+ "train_cfg": {
+  "lr": 0.005,
+  "weight_decay": 0.0005,
+  "epochs": 300,
+  "patience": 100,
+  "grad_clip": 1.0,
+  "scheduler": "none"
+ },
+ "wall_seconds": 20.783918619155884,
+ "phase_diagnostics": null,
+ "data_meta": {
+  "dataset": "Cora (Planetoid, public split)",
+  "num_nodes": 2708,
+  "num_edges_directed": 10556,
+  "num_features": 1433,
+  "num_classes": 7,
+  "train/val/test": [
+   140,
+   500,
+   1000
+  ],
+  "raw_sha256_16": "90e586ac50c21748",
+  "structural": {
+   "num_components": 78,
+   "lap_selected_multiplicities": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "lap_min_gap_selected": 0.000217168360145039,
+   "null_space_dim": 78,
+   "lap_seconds": 2.821879240000044,
+   "rwse_seconds": 2.920518541999968
+  }
+ },
+ "env": {
+  "torch": "2.14.1+cu130",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+  "threads": 1,
+  "cuda": false,
+  "git_commit": null
+ },
+ "finished": true,
+ "best_epoch": 98,
+ "epochs_run": 199,
+ "train_seconds": 20.769551569999976,
+ "seconds_per_epoch": 0.10436960587939687,
+ "num_parameters": 92373,
+ "inference_seconds": 0.009998799000186409,
+ "train_loss": 0.45044317841529846,
+ "train_acc": 0.9928571581840515,
+ "train_macro_f1": 0.9928526757795051,
+ "val_loss": 0.9165542125701904,
+ "val_acc": 0.8240000009536743,
+ "val_macro_f1": 0.8109698454690977,
+ "test_loss": 0.8793002963066101,
+ "test_acc": 0.8360000252723694,
+ "test_macro_f1": 0.8213281980295841,
+ "cpu_max_rss_mb": 726.48046875
+}

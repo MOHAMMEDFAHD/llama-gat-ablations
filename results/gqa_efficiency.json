@@ -1,0 +1,108 @@
+{
+ "cora_rwse_rotary": [
+  {
+   "H": 8,
+   "H_kv": 8,
+   "kv_proj_params": 8192,
+   "total_params": 17984,
+   "autograd_saved_MB": 23.5457763671875,
+   "fwd_bwd_ms_median": 26.209377999999894
+  },
+  {
+   "H": 8,
+   "H_kv": 4,
+   "kv_proj_params": 4096,
+   "total_params": 13360,
+   "autograd_saved_MB": 18.8179931640625,
+   "fwd_bwd_ms_median": 24.722232000000233
+  },
+  {
+   "H": 8,
+   "H_kv": 2,
+   "kv_proj_params": 2048,
+   "total_params": 11048,
+   "autograd_saved_MB": 16.4541015625,
+   "fwd_bwd_ms_median": 21.647878000000453
+  },
+  {
+   "H": 8,
+   "H_kv": 1,
+   "kv_proj_params": 1024,
+   "total_params": 9892,
+   "autograd_saved_MB": 15.27215576171875,
+   "fwd_bwd_ms_median": 19.247230999999587
+  }
+ ],
+ "cora_no_rotary": [
+  {
+   "H": 8,
+   "H_kv": 8,
+   "kv_proj_params": 8192,
+   "total_params": 16384,
+   "autograd_saved_MB": 16.7652587890625,
+   "fwd_bwd_ms_median": 25.638562000000142
+  },
+  {
+   "H": 8,
+   "H_kv": 4,
+   "kv_proj_params": 4096,
+   "total_params": 12288,
+   "autograd_saved_MB": 13.5269775390625,
+   "fwd_bwd_ms_median": 21.68244299999955
+  },
+  {
+   "H": 8,
+   "H_kv": 2,
+   "kv_proj_params": 2048,
+   "total_params": 10240,
+   "autograd_saved_MB": 11.9078369140625,
+   "fwd_bwd_ms_median": 16.345401000000592
+  },
+  {
+   "H": 8,
+   "H_kv": 1,
+   "kv_proj_params": 1024,
+   "total_params": 9216,
+   "autograd_saved_MB": 11.0982666015625,
+   "fwd_bwd_ms_median": 18.085409000001107
+  }
+ ],
+ "synthetic_N20k_E400k": [
+  {
+   "H": 8,
+   "H_kv": 8,
+   "kv_proj_params": 8192,
+   "total_params": 16384,
+   "autograd_saved_MB": 492.0375671386719,
+   "fwd_bwd_ms_median": 1048.4011019999998
+  },
+  {
+   "H": 8,
+   "H_kv": 4,
+   "kv_proj_params": 4096,
+   "total_params": 12288,
+   "autograd_saved_MB": 389.5468444824219,
+   "fwd_bwd_ms_median": 924.4972029999996
+  },
+  {
+   "H": 8,
+   "H_kv": 2,
+   "kv_proj_params": 2048,
+   "total_params": 10240,
+   "autograd_saved_MB": 338.3014831542969,
+   "fwd_bwd_ms_median": 779.792779000001
+  },
+  {
+   "H": 8,
+   "H_kv": 1,
+   "kv_proj_params": 1024,
+   "total_params": 9216,
+   "autograd_saved_MB": 312.6788024902344,
+   "fwd_bwd_ms_median": 774.6727310000026
+  }
+ ],
+ "edges": {
+  "cora": 13264,
+  "synthetic": 419802
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "arm": "A6",
+ "description": "spectral RoPE, learnable freqs, MHA",
+ "seed": 1,
+ "model": "graphllama",
+ "model_kwargs": {
+  "dim": 64,
+  "num_layers": 2,
+  "num_heads": 8,
+  "dropout": 0.6,
+  "input_dropout": 0.6,
+  "attn_dropout": 0.3,
+  "norm": "rms",
+  "ffn": "swiglu",
+  "ffn_mult": 2.0,
+  "lap_k": 16,
+  "rwse_dim": 16,
+  "self_loops": "add",
+  "rotary": "spectral"
+ },
+ "train_cfg": {
+  "lr": 0.005,
+  "weight_decay": 0.0005,
+  "epochs": 300,
+  "patience": 100,
+  "grad_clip": 1.0,
+  "scheduler": "none"
+ },
+ "wall_seconds": 23.92114233970642,
+ "phase_diagnostics": {
+  "layer0": {
+   "edge_mean_abs_sin_half_dphi": 0.36298030614852905,
+   "random_pair_mean_abs_sin_half_dphi": 0.5349398851394653
+  },
+  "layer1": {
+   "edge_mean_abs_sin_half_dphi": 0.37043362855911255,
+   "random_pair_mean_abs_sin_half_dphi": 0.5381017327308655
+  }
+ },
+ "data_meta": {
+  "dataset": "Cora (Planetoid, public split)",
+  "num_nodes": 2708,
+  "num_edges_directed": 10556,
+  "num_features": 1433,
+  "num_classes": 7,
+  "train/val/test": [
+   140,
+   500,
+   1000
+  ],
+  "raw_sha256_16": "90e586ac50c21748",
+  "structural": {
+   "num_components": 78,
+   "lap_selected_multiplicities": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "lap_min_gap_selected": 0.000217168360145039,
+   "null_space_dim": 78,
+   "lap_seconds": 2.821879240000044,
+   "rwse_seconds": 2.920518541999968
+  }
+ },
+ "env": {
+  "torch": "2.14.1+cu130",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+  "threads": 1,
+  "cuda": false,
+  "git_commit": null
+ },
+ "finished": true,
+ "best_epoch": 19,
+ "epochs_run": 120,
+ "train_seconds": 23.889375898000026,
+ "seconds_per_epoch": 0.19907813248333356,
+ "num_parameters": 175495,
+ "inference_seconds": 0.027850598999975773,
+ "train_loss": 0.023244718089699745,
+ "train_acc": 1.0,
+ "train_macro_f1": 1.0,
+ "val_loss": 0.9225203394889832,
+ "val_acc": 0.7820000052452087,
+ "val_macro_f1": 0.7752995291019936,
+ "test_loss": 0.8475117087364197,
+ "test_acc": 0.7889999747276306,
+ "test_macro_f1": 0.7772846947147432,
+ "cpu_max_rss_mb": 799.8203125
+}

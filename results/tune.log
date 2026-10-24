@@ -1,0 +1,14 @@
+/usr/local/lib/python3.12/dist-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/home/claude/llama-graph-attention/src/training/graph_trainer.py:83: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  state["history"].append({"epoch": state["epoch"], "train_loss": float(loss), "val_acc": ev["val_acc"], "val_loss": ev["val_loss"]})
+{"dropout": 0.6, "weight_decay": 0.0005, "lr": 0.005, "val_mean": 0.7919999957084656, "vals": [0.7879999876022339, 0.7960000038146973]}
+{"dropout": 0.6, "weight_decay": 0.0005, "lr": 0.01, "val_mean": 0.7839999794960022, "vals": [0.7839999794960022, 0.7839999794960022]}
+{"dropout": 0.6, "weight_decay": 0.005, "lr": 0.005, "val_mean": 0.7919999957084656, "vals": [0.7879999876022339, 0.7960000038146973]}
+{"dropout": 0.6, "weight_decay": 0.005, "lr": 0.01, "val_mean": 0.7879999876022339, "vals": [0.7919999957084656, 0.7839999794960022]}
+{"dropout": 0.8, "weight_decay": 0.0005, "lr": 0.005, "val_mean": 0.7910000085830688, "vals": [0.7860000133514404, 0.7960000038146973]}
+{"dropout": 0.8, "weight_decay": 0.0005, "lr": 0.01, "val_mean": 0.785999983549118, "vals": [0.7879999876022339, 0.7839999794960022]}
+{"dropout": 0.8, "weight_decay": 0.005, "lr": 0.005, "val_mean": 0.7900000214576721, "vals": [0.7860000133514404, 0.7940000295639038]}
+{"dropout": 0.8, "weight_decay": 0.005, "lr": 0.01, "val_mean": 0.7849999964237213, "vals": [0.7879999876022339, 0.7820000052452087]}
+SELECTED {'dropout': 0.6, 'weight_decay': 0.0005, 'lr': 0.005, 'val_mean': 0.7919999957084656, 'vals': [0.7879999876022339, 0.7960000038146973]}

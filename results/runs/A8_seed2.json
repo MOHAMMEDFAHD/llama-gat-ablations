@@ -1,0 +1,103 @@
+{
+ "arm": "A8",
+ "description": "RWSE-MLP phases, MHA",
+ "seed": 2,
+ "model": "graphllama",
+ "model_kwargs": {
+  "dim": 64,
+  "num_layers": 2,
+  "num_heads": 8,
+  "dropout": 0.6,
+  "input_dropout": 0.6,
+  "attn_dropout": 0.3,
+  "norm": "rms",
+  "ffn": "swiglu",
+  "ffn_mult": 2.0,
+  "lap_k": 16,
+  "rwse_dim": 16,
+  "self_loops": "add",
+  "rotary": "rwse"
+ },
+ "train_cfg": {
+  "lr": 0.005,
+  "weight_decay": 0.0005,
+  "epochs": 300,
+  "patience": 100,
+  "grad_clip": 1.0,
+  "scheduler": "none"
+ },
+ "wall_seconds": 23.117631196975708,
+ "phase_diagnostics": {
+  "layer0": {
+   "edge_mean_abs_sin_half_dphi": 0.08104003220796585,
+   "random_pair_mean_abs_sin_half_dphi": 0.13754905760288239
+  },
+  "layer1": {
+   "edge_mean_abs_sin_half_dphi": 0.04313644766807556,
+   "random_pair_mean_abs_sin_half_dphi": 0.09408966451883316
+  }
+ },
+ "data_meta": {
+  "dataset": "Cora (Planetoid, public split)",
+  "num_nodes": 2708,
+  "num_edges_directed": 10556,
+  "num_features": 1433,
+  "num_classes": 7,
+  "train/val/test": [
+   140,
+   500,
+   1000
+  ],
+  "raw_sha256_16": "90e586ac50c21748",
+  "structural": {
+   "num_components": 78,
+   "lap_selected_multiplicities": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "lap_min_gap_selected": 0.000217168360145039,
+   "null_space_dim": 78,
+   "lap_seconds": 2.821879240000044,
+   "rwse_seconds": 2.920518541999968
+  }
+ },
+ "env": {
+  "torch": "2.14.1+cu130",
+  "python": "3.12.3",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+  "threads": 1,
+  "cuda": false,
+  "git_commit": null
+ },
+ "finished": true,
+ "best_epoch": 15,
+ "epochs_run": 116,
+ "train_seconds": 23.086510223000005,
+ "seconds_per_epoch": 0.1990216398534483,
+ "num_parameters": 177671,
+ "inference_seconds": 0.026879339999936747,
+ "train_loss": 0.11551649868488312,
+ "train_acc": 0.9857142567634583,
+ "train_macro_f1": 0.985709818636648,
+ "val_loss": 0.8417363166809082,
+ "val_acc": 0.7839999794960022,
+ "val_macro_f1": 0.7772383693391999,
+ "test_loss": 0.7447486519813538,
+ "test_acc": 0.7789999842643738,
+ "test_macro_f1": 0.7691345133395705,
+ "cpu_max_rss_mb": 803.18359375
+}

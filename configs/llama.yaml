@@ -1,0 +1,18 @@
+# Tiny LLaMA-style reference model for correctness tests (not a full-size LLaMA).
+model:
+  vocab_size: 32
+  hidden_size: 64
+  num_hidden_layers: 2
+  num_attention_heads: 4
+  num_key_value_heads: 2      # GQA (LLaMA-3 style); set = num_attention_heads for MHA, 1 for MQA
+  rope_theta: 10000.0         # LLaMA 1/2; LLaMA 3 uses 500000
+  rope_layout: half
+  rope_scaling: null          # e.g. {type: llama3, factor: 8, low_freq_factor: 1, high_freq_factor: 4, original_max_position_embeddings: 8192}
+  attention_backend: sdpa
+  tie_word_embeddings: false
+train:
+  steps: 400
+  batch: 32
+  seq_len: 16
+  lr: 0.003
+  seed: 0

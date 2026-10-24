@@ -1,0 +1,43 @@
+# Cora ablation suite. Backbone hyper-parameters selected on VALIDATION only (results/backbone_tuning_val.json)
+# on arm A2 and frozen for every GraphLlama arm.
+threads: 1
+use_cuda: true
+seeds: [0, 1, 2, 3, 4]
+train: {lr: 0.005, weight_decay: 0.0005, epochs: 300, patience: 100, grad_clip: 1.0, scheduler: none}
+graphllama_backbone:
+  dim: 64
+  num_layers: 2
+  num_heads: 8
+  dropout: 0.6
+  input_dropout: 0.6
+  attn_dropout: 0.3
+  norm: rms
+  ffn: swiglu
+  ffn_mult: 2.0
+  lap_k: 16
+  rwse_dim: 16
+  self_loops: add
+arms:
+  A0:  {model: gat,   description: "GAT (manual, additive)", model_kwargs: {hidden: 8, heads: 8, dropout: 0.6}}
+  A1:  {model: gatv2, description: "GATv2 (PyG)", model_kwargs: {hidden: 8, heads: 8, dropout: 0.6}}
+  A2:  {model: graphllama, description: "dot-product, no PE (LLaMA block)"}
+  A3:  {model: graphllama, description: "index-RoPE on node ids (INVALID control)", model_kwargs: {rotary: index}}
+  A4:  {model: graphllama, description: "absolute LapPE (sign-flip aug.)", model_kwargs: {pe: lap}}
+  A5:  {model: graphllama, description: "WIRE-style spectral RoPE, fixed random freqs", model_kwargs: {rotary: spectral, rotary_learnable: false}}
+  A6:  {model: graphllama, description: "spectral RoPE, learnable freqs, MHA", model_kwargs: {rotary: spectral}}
+  A7:  {model: graphllama, description: "spectral RoPE, GQA (H_kv=2)", model_kwargs: {rotary: spectral, num_kv_heads: 2}}
+  A8:  {model: graphllama, description: "RWSE-MLP phases, MHA", model_kwargs: {rotary: rwse}}
+  A9:  {model: graphllama, description: "RWSE-MLP phases, GQA (H_kv=2)", model_kwargs: {rotary: rwse, num_kv_heads: 2}}
+  A10: {model: graphllama, description: "A9 + RWSE structural bias", model_kwargs: {rotary: rwse, num_kv_heads: 2, struct_bias: true}}
+  A10e: {model: graphllama, description: "edge (antisymmetric) phases, MHA", model_kwargs: {rotary: edge}}
+  B_gcn:  {model: gcn,  description: "GCN (PyG)",  model_kwargs: {hidden: 64, dropout: 0.5}}
+  B_sage: {model: sage, description: "GraphSAGE (PyG)", model_kwargs: {hidden: 64, dropout: 0.5}}
+  B_gin:  {model: gin,  description: "GIN (PyG)",  model_kwargs: {hidden: 64, dropout: 0.5}}
+  C_layernorm: {model: graphllama, description: "A2 with LayerNorm", model_kwargs: {norm: layer}, seeds: [0, 1, 2]}
+  C_gelu:      {model: graphllama, description: "A2 with GELU-MLP (param-matched)", model_kwargs: {ffn: gelu}, seeds: [0, 1, 2]}
+  C_mqa:       {model: graphllama, description: "A2 with MQA (H_kv=1)", model_kwargs: {num_kv_heads: 1}, seeds: [0, 1, 2]}
+  C_3layers:   {model: graphllama, description: "A2 with 3 layers", model_kwargs: {num_layers: 3}, seeds: [0, 1, 2]}
+  C_rotdim4:   {model: graphllama, description: "A6 with rotary_dim=4 of 8", model_kwargs: {rotary: spectral, rotary_dim: 4}, seeds: [0, 1, 2]}
+  # Global O(N^2) attention baselines: reduced budget on 1 CPU core (documented in the report)
+  B_gt:  {model: gt_lappe, description: "Graph Transformer, global attn + LapPE (reduced budget)", model_kwargs: {}, seeds: [0, 1, 2], train: {epochs: 100, patience: 30}}
+  B_gps: {model: gps, description: "GraphGPS (GIN + global attn, RWSE) (reduced budget)", model_kwargs: {}, seeds: [0, 1, 2], train: {epochs: 100, patience: 30}}
